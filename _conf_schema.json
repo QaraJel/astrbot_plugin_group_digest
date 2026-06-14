@@ -1,0 +1,127 @@
+{
+  "style_path": {
+    "description": "pillowmd 图片渲染风格目录路径（本地），留空则使用默认 modern-dark 风格",
+    "type": "string",
+    "default": "",
+    "hint": "例如 C:\\styles\\my-style 或 /data/styles/default，留空则使用内置的现代暗色风格"
+  },
+  "enable_groups": {
+    "description": "启用的群聊ID列表",
+    "type": "list",
+    "default": [],
+    "hint": "填写需要监控的QQ群号，空列表表示不启用任何群"
+  },
+  "enable_private": {
+    "description": "启用私聊采集（测试用）",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后私聊消息也会被采集并定时摘要，用于测试验证"
+  },
+  "forward_groups": {
+    "description": "转发目标群号列表",
+    "type": "list",
+    "default": [],
+    "hint": "填写群号，所有摘要将自动静默转发到这些群"
+  },
+  "forward_private": {
+    "description": "转发目标QQ号列表",
+    "type": "list",
+    "default": [],
+    "hint": "填写QQ号，所有摘要将自动静默转发到这些私聊"
+  },
+  "modality": {
+    "description": "消息模态采集开关",
+    "type": "object",
+    "hint": "开启/关闭各模态的消息采集",
+    "items": {
+      "text": {
+        "description": "采集文本消息",
+        "type": "bool",
+        "default": true,
+        "hint": "开启后采集文本消息内容"
+      },
+      "image": {
+        "description": "采集图片消息（暂未实现）",
+        "type": "bool",
+        "default": false,
+        "hint": "开启后图片消息记录占位符 [图片]"
+      },
+      "voice": {
+        "description": "采集语音消息（暂未实现）",
+        "type": "bool",
+        "default": false,
+        "hint": "开启后语音消息记录占位符 [语音]"
+      }
+    }
+  },
+  "summary_schedule": {
+    "description": "定时摘要触发时间(留空则不会定时发布)",
+    "type": "string",
+    "default": "08:00,20:00",
+    "hint": "格式 HH:MM,HH:MM，如 '08:00,20:00' 表示每天8点和20点触发。留空则关闭定时发布"
+  },
+  "scheduled_summary_groups": {
+    "description": "定时摘要排除群聊（黑名单）",
+    "type": "string",
+    "default": "",
+    "hint": "留空表示所有启用的群都参与定时摘要。填入群号（半角逗号分隔）则这些群不参与定时摘要，如 '185672230,925898680'"
+  },
+  "coupling_count": {
+    "description": "耦合历史文件数",
+    "type": "int",
+    "default": 0,
+    "hint": "0=仅总结最新文件，N=额外包含往前N个历史文件作为上下文"
+  },
+  "self_recursion": {
+    "description": "采集机器人自己的消息",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后机器人自己发出的消息也会被采集"
+  },
+  "name_record": {
+    "description": "记录群昵称",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后记录群昵称如[张三]，关闭后不记录任何身份信息"
+  },
+  "cache_clean_days": {
+    "description": "汇总文件保留天数",
+    "type": "int",
+    "default": 7,
+    "hint": "超过此天数的汇总文件将被自动清理"
+  },
+  "cache_clean_interval_hours": {
+    "description": "清理检查间隔（小时）",
+    "type": "int",
+    "default": 12,
+    "hint": "每隔多少小时检查一次是否有过期文件"
+  },
+  "summary_prompt": {
+    "description": "AI摘要提示词模板",
+    "type": "text",
+    "default": "你是一个专业的群聊总结助手。请根据以下群聊消息记录，生成一份结构化的群聊摘要。\n\n要求：\n1. 先给出 2-3 句话的总体概括\n2. 然后按话题分类，列出关键讨论内容\n3. 忽略纯表情、无意义水聊\n4. 不要遗漏重要信息\n5. 如果有多份记录文件，请专注于最新的汇总文件，历史文件仅作为背景参考",
+    "hint": "自定义发送给LLM的提示词",
+    "editor_mode": true,
+    "editor_language": "text"
+  },
+  "summary_provider_id": {
+    "description": "摘要生成模型",
+    "type": "string",
+    "default": "deepseek/deepseek-v4-flash",
+    "hint": "填写 AstrBot 中已配置的提供商/模型 ID，如 'deepseek/deepseek-v4-flash' 或 'openai/gpt-4o'"
+  },
+  "output_mode": {
+    "description": "输出方式",
+    "type": "string",
+    "options": ["image", "file"],
+    "labels": ["渲染为图片", "发送MD文件"],
+    "default": "image",
+    "hint": "图片更美观（pillowmd 本地渲染），文件更直接"
+  },
+  "suppress_notifications": {
+    "description": "禁止通知",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后所有命令（send/receive/generate）即使使用 public 模式也不显示进度通知和来源标注"
+  }
+}

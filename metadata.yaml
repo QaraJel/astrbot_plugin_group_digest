@@ -1,0 +1,9 @@
+name: astrbot_plugin_group_digest
+display_name: 炼化钳
+short_desc: 流式记录信息转化处理为md格式，自定义提示词以生成超长总结，不错过任何细节。适合低成本模型。
+desc: 监听群聊全部文本消息并持久化存储，可批量导出大份记录。使用LLM对超长记录进行总结，后台渲染出图以帮助用户快速"消化"海量群消息，不错过任何重要信息。
+version: v1.3.0
+author: QaraJel
+repo: https://github.com/user/astrbot_plugin_group_digest
+support_platforms:
+  - aiocqhttp

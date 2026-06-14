@@ -1,0 +1,74 @@
+{
+    "name": "现代暗色",
+    "intr": "现代极简暗色风格，受 Linear/Stripe 设计启发，柔和护眼",
+    "author": "Qwen",
+    "version": "1.2",
+    "cost": 0,
+    "selling": false,
+
+    "fontSize": 24,
+    "title1FontSize": 58,
+    "title2FontSize": 38,
+    "title3FontSize": 28,
+    "expressionFontSizeRate": 0.85,
+    "codeBlockFontSize": 14,
+
+    "rd": 120,
+    "ld": 120,
+    "ud": 100,
+    "dd": 100,
+    "xSizeMax": 960,
+
+    "font": "yahei.ttf",
+    "titleFont": "yahei.ttf",
+    "expressionFont": "STIXTwoMath-Regular.ttf",
+    "codeFont": "smSans.ttf",
+
+    "codeBlockLRDistance": 24,
+    "codeBlockUDDistance": 20,
+    "formLineDistance": 16,
+    "lineDistance": 12,
+    "citeDistance": 24,
+
+    "pageLineColor": [45, 50, 58, 80],
+    "pageLineStyle": "dotted_line",
+
+    "unorderedListDotColor": [110, 190, 245],
+    "orderedListDotColor": [110, 190, 245],
+    "orderedListNumberColor": [160, 170, 182],
+
+    "citeUnderpainting": [30, 35, 42, 200],
+    "citeSplitLineColor": [110, 190, 245, 220],
+
+    "codeBlockUnderpainting": [22, 26, 32, 255],
+    "codeBlockTitleColor": [165, 175, 188],
+
+    "formLineColor": [60, 68, 78],
+    "formTextColor": [225, 230, 237],
+    "formUnderpainting": [0, 0, 0, 0],
+    "formTitleUnderpainting": [50, 58, 68, 220],
+
+    "textColor": [225, 230, 237],
+    "textGradientEndColor": [185, 195, 205],
+    "linkColor": [110, 190, 245],
+
+    "expressionUnderpainting": [28, 33, 40, 200],
+    "insertCodeUnderpating": [45, 50, 58, 220],
+
+    "idlineColor": [55, 62, 70],
+
+    "expressionTextColor": [205, 215, 225],
+    "insertCodeTextColor": [255, 145, 125],
+    "codeBlockTextColor": [205, 215, 225],
+
+    "remarkColor": [110, 118, 129],
+    "remarkFontSize": 16,
+    "remarkCoordinate": [30, 2],
+
+    "secondFonts": ["yahei.ttf", "unifont.ttf"],
+    "fontYCorrect": {
+        "yahei.ttf": 15
+    },
+
+    "backgroudFunc": "dark_bg"
+}

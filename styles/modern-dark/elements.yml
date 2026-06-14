@@ -1,0 +1,55 @@
+# 高级元素/背景配置
+# 注意：当前风格使用 setting.json 中的 backgroudFunc + style.py 代码生成背景，
+# 因此 enable 设为 false。如需使用图片背景/装饰，请改为 true 并填充下方配置。
+
+enable: false
+
+# ==================== GIF 渲染（可选） ====================
+# page: 10
+# duration: 0.5
+# playbackSequence: "1 2 3 4 5 6 7 8 9 10"
+
+# ==================== 背景配置 ====================
+background:
+  # mode: 0 → 单图填充; 1 → 九图填充
+  mode: 0
+  data:
+    img: ""
+    lock: false
+    mode: 0
+    # 填充模式: 0=拉伸, 1=平铺, 2=智能平铺,
+    #          3=Y拉伸+X平铺, 4=X拉伸+Y平铺,
+    #          5=Y拉伸+X智能平铺, 6=X拉伸+Y智能平铺
+
+# ==================== 装饰配置 ====================
+decorates:
+  # top:  渲染在文本之上
+  # bottom: 渲染在背景之上、文本之下
+  top:
+    left-up: []
+    left: []
+    left-down: []
+    up: []
+    down: []
+    right-up: []
+    right: []
+    right-down: []
+    middle: []
+  bottom:
+    left-up: []
+    left: []
+    left-down: []
+    up: []
+    down: []
+    right-up: []
+    right: []
+    right-down: []
+    middle: []
+    # 每个装饰物格式:
+    # - img: "image.png"    # 图片名（放在 imgs/ 目录下）
+    #   mode: 0             # 0=原始大小, 1=等比缩放
+    #   xlimit: 0.5         # mode=1 时: X轴最大占比 (0~1)
+    #   ylimit: 0.5         # mode=1 时: Y轴最大占比 (0~1)
+    #   min: 1              # mode=1 时: 最小缩放倍数
+    #   max: 99             # mode=1 时: 最大缩放倍数
+    #   lock: false         # GIF锁定（不随帧变化）
